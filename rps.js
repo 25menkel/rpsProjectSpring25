@@ -10,3 +10,25 @@ function getComputerChoice() {
     let randomIndex = Math.floor(Math.random() * 3);
     return choices[randomIndex];
 }
+
+function getUserChoice() {
+    let choice = prompt ("Enter rock, paper, or scissors:").toLowerCase();
+    while (choice !== "rock" && choice != "paper" && choice != "scissors") {
+        choice = prompt ("Invalid input. Please enter rock, paper, or scissors:").toLowerCase();
+    }
+return choice;
+}
+
+
+Function playRound(playerChoice, computerChoice) {
+    if (playerChoice === computerChoice) {
+        return "It's a tie, play again" + playerChoice + ".";
+    }
+    If (playerChoice === "rock") {
+        if (computerChoice === "scissors") {
+            return "You Win! Rock beats scissors.";
+        } else {
+            return "You Lose, paper beats rock";
+        }
+    }
+}
