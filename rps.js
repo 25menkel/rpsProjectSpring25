@@ -20,7 +20,7 @@ return choice;
 }
 
 
-Function playRound(playerChoice, computerChoice) {
+function playRound(playerChoice, computerChoice) {
     if (playerChoice === computerChoice) {
         return "It's a tie, play again" + playerChoice + ".";
     }
@@ -32,3 +32,21 @@ Function playRound(playerChoice, computerChoice) {
         }
     }
 }
+
+if (playerChoice === "paper") {
+    if (computerChoice === "rock") {
+     return "You win! Paper beats rock."; 
+    } else {
+      return "You lose, Scissors beats Paper."; 
+    }
+}
+
+if (playerChoice === "scissors") {
+    if (computerChoice === "paper") {
+     return "You win! Scissors beats Paper"; 
+    } else {
+     return "You lose, Rock beats scissors";
+    }
+  }
+} 
+
