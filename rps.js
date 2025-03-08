@@ -22,16 +22,15 @@ return choice;
 
 function playRound(playerChoice, computerChoice) {
     if (playerChoice === computerChoice) {
-        return "It's a tie, play again" + playerChoice + ".";
+        return "It's a tie Both players chose" + playerChoice + ".";
     }
-    If (playerChoice === "rock") {
+    if (playerChoice === "rock") {
         if (computerChoice === "scissors") {
-            return "You Win! Rock beats scissors.";
+         return "You Win! Rock beats scissors.";
         } else {
-            return "You Lose, paper beats rock";
-        }
+          return "You Lose, Paper beats rock"; 
+         }
     }
-}
 
 if (playerChoice === "paper") {
     if (computerChoice === "rock") {
@@ -50,3 +49,27 @@ if (playerChoice === "scissors") {
   }
 } 
 
+function playgame() {
+    let playerScore = 0;
+    let computerScore = 0;
+    while (playerScore < 5 && computerScore < 5) {
+        let playerChoice = getUserChoice();
+        let computerChoice = getComputerChoice();
+        let result = playRound(playerChoice, computerChoice);
+        console.log(result);
+        
+        If (result.indexOf("win") !== -1 && result.indexOf("lose") == -1) {
+            playerScore = playerScore + 1;
+        } else if (result.indexOf("lose") !== -1) {
+            computerScore = computerScore + 1;
+        }
+        console.log("Score: You" + playerScore + "-Computer" +computerScore);
+    }
+    if (playerScore === 5) {
+        console.log("You have won the game!");
+    } else {
+        console.log("You have lost the game. :(")
+    }
+}
+
+playGame();
